@@ -47,7 +47,7 @@ namespace PizzaOrderingApp
         {
             if (cmbSize.SelectedItem == null)
             {
-                MessageBox.Show("Please select a pizza size", "Error");
+                MessageBox.Show("Please select a pizza size", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -67,7 +67,10 @@ namespace PizzaOrderingApp
             Pizza.Orders.Add(pizza);
             lstSummary.Items.Add(pizza);
 
-            MessageBox.Show("Pizza added successfully!");
+            MessageBox.Show("Pizza added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Clearing the pizza size cmb box
+            cmbSize.SelectedIndex = -1;
 
         }
 
